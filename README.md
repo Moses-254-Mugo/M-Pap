@@ -10,9 +10,6 @@
 ## Description
 M-Pap is a web application that provide a real-time conversation with people and also extends one way messaging to accept two-way communcation. 
 
-## Screenshots
-<img src="static/images/lading-page.png" alt="">
-<img src="static/images/pizza joint pic.png" alt="">
 
 ## Setup and Installation
 ### Requirements
@@ -40,7 +37,7 @@ M-Pap is a web application that provide a real-time conversation with people and
 5. Create Database migrations
     make migrations on postgres using django
 
-        python3.8 manage.py makemigrations garage M-Pap
+        python3.8 manage.py makemigrations chats
     then run the below command.
 
         python3.8 manage.py migrate
