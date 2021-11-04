@@ -8,7 +8,7 @@
 
 
 ## Description
-M-Pap is a web application that provide a real-time conversation with people and also extends one way messaging to accept two-way communcation. 
+M-Pap is a web application that provides a real-time conversation with people and also extends one-way messaging to accept two-way communication. 
 
 
 ## Setup and Installation
