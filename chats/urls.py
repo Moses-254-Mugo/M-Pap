@@ -8,5 +8,6 @@ urlpatterns = [
     path('checkview', views.checkview, name='checkview'),
     path('send',views.send, name='send'),
     path('getMessages/<str:room>/', views.getMessages, name='getMessages'),
+    # path('search/',views.search_results, name ='search_results'),
     
 ]

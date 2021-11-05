@@ -10,7 +10,7 @@ def home(request):
     return render(request, 'home.html')
 
 def room(request,room):
-    username = request.POST.get('username')
+    username = request.GET.get('username')
     room_details = Room.objects.get(name=room)
     return render(request, 'room.html',{
         'username':username,
@@ -44,3 +44,17 @@ def getMessages(request, room):
     messages = Message.objects.filter(room=room_details.id)
     return JsonResponse({'messages': list(messages.values())})
 
+# def search_results(request):
+#     if 'user' in request.GET and request.GET["user"]:
+#         search_term = request.POST.get("user")
+#         searched_articles = Message.search_by_user(search_term)
+#         message = f"{search_term}"
+#         context = {"message":message,
+#         "user": searched_articles}
+#         return render(request, 'search.html',context)
+#     else:
+#         message = "no user found"
+#         context = {
+#             'message':message
+#         }
+#         return render(request, 'room.html',context)
