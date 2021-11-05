@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from .models import Room, Message
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 # Create your views here.
 
 @login_required(login_url='/accounts/login/')
@@ -9,7 +10,7 @@ def home(request):
     return render(request, 'home.html')
 
 def room(request,room):
-    username = request.GET.get('username')
+    username = request.POST.get('username')
     room_details = Room.objects.get(name=room)
     return render(request, 'room.html',{
         'username':username,
@@ -42,3 +43,4 @@ def getMessages(request, room):
     room_details = Room.objects.get(name=room)
     messages = Message.objects.filter(room=room_details.id)
     return JsonResponse({'messages': list(messages.values())})
+

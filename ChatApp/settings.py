@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure--gex2b2lk=0uv5m24yxsq7a_b@ab)h58b&1d*go99slr5#a4b*
 # SECURITY WARNING: don't run with debug turned on in production!
 MODE=config("MODE", default="dev")
 
-DEBUG = os.environ.get('DEBUG', False)
-
+# DEBUG = os.environ.get('DEBUG', False)
+DEBUG = True
 # development
 if config('MODE')=="dev":
    DATABASES = {
@@ -106,18 +106,7 @@ WSGI_APPLICATION = 'ChatApp.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    
 ]
 
 
@@ -155,3 +144,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
+
+LOGOUT_REDIRECT_URL = "/accounts/login/"
