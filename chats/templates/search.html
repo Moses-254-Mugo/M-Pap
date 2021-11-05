@@ -1,0 +1,49 @@
+{% block content %}
+<div class="container">
+  <div class="row text-center" style="margin-top: 100px;">
+    {% if user%}
+      <h2>Found {{ user|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 users for the search term {{message}}</h2>
+    {% endif %}
+  </div>
+  <div class="row">
+ {%endblock%}
+
+
+<!-- 
+<div id="display">
+
+    <div class="container darker">
+   <!--  <b>Destiny</b><p>Hello Everyone, How Are You Guys Doing?</p>-->
+   <!--  <span class="time-left">20th, April 2021</span>-->
+   <!-- </div>
+   
+   </div> -->
+   
+
+<!-- <script>
+
+    $(document).ready(function(){
+    
+    setInterval(function(){
+        $.ajax({
+            type: 'GET',
+            url : "/getMessages/{{room}}/",
+            success: function(response){
+                console.log(response);
+                $("#display").empty();
+                for (var key in response.messages)
+                {
+                    var temp="<div class='container darker'><b>"+response.messages[key].user+"</b><p>"+response.messages[key].value+"</p><span class='time-left'>"+response.messages[key].date+"</span></div>";
+                    $("#display").append(temp);
+                }
+            },
+            error: function(response){
+            
+            }
+        });
+    },1000);
+    })
+    </script>  -->
+    
